@@ -1,7 +1,7 @@
 # The Microbe Directory V.03
 
-**The Microbe Directory (TMD) is a database of microbial features and ecological characteristics. The database was first developed in 2016 as a collective effort to understand the characteristics of microbial species found in metagenomic studies.
-**The goal of TMD is to have a comprehensive annotation of ecological and phenotypical data available for every microbial species. This annotation process is a collective manual and computational effort from scientist and volunteers around the globe.
+The Microbe Directory (TMD) is a database of microbial features and ecological characteristics. The database was first developed in 2016 as a collective effort to understand the characteristics of microbial species found in metagenomic studies.
+The goal of TMD is to have a comprehensive annotation of ecological and phenotypical data available for every microbial species. This annotation process is a collective manual and computational effort from scientist and volunteers around the globe.
 
 TMD aims to:
 
