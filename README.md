@@ -17,5 +17,5 @@ Visualize database in the following link.
 
 Previous versions of TMD include:
 
->* V.02 2019 [GitHub MD2]https://github.com/dcdanko/MD2.git
+>* V.02 2019 [GitHub MD2](https://github.com/dcdanko/MD2.git)
 >* V.01 2018 [Publication Gates Open Res. 2018](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5883067/)
