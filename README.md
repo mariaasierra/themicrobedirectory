@@ -13,7 +13,7 @@ TMD aims to:
 >*
 
 Visualize database in the following link.
-> V.03 2024 [www.themicrobedirectory.com](www.themicrobedirectory.com)
+> V.03 2024 [www.themicrobedirectory.com](https://themicrobedirectory.shinyapps.io/website/)
 
 Previous versions of TMD include:
 
