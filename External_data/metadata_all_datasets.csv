@@ -1,0 +1,73 @@
+﻿FASTQ,Project,Sample_ID,Sequence,Subject_ID,Sex,Body_site,City,Country,Beach,Sponge
+ERR4181783_1.fastq.gz,TARA_oceans,ERR4181783_1,Metatranscriptomics,NA,NA,NA,NA,Polar circle,NA,
+ERR4181787_1.fastq.gz,TARA_oceans,ERR4181787_1,Metatranscriptomics,NA,NA,NA,NA,Polar circle,NA,
+ERR6349548_1.fastq.gz,TARA_oceans,ERR6349548_1,Metatranscriptomics,NA,NA,NA,NA,Polar circle,NA,
+ERR6349549_1.fastq.gz,TARA_oceans,ERR6349549_1,Metatranscriptomics,NA,NA,NA,NA,Polar circle,NA,
+ERR6349554_1.fastq.gz,TARA_oceans,ERR6349554_1,Metatranscriptomics,NA,NA,NA,NA,Polar circle,NA,
+ERR6349555_1.fastq.gz,TARA_oceans,ERR6349555_1,Metatranscriptomics,NA,NA,NA,NA,Polar circle,NA,
+ERR6349557_1.fastq.gz,TARA_oceans,ERR6349557_1,Metatranscriptomics,NA,NA,NA,NA,Polar circle,NA,
+ERR6349560_1.fastq.gz,TARA_oceans,ERR6349560_1,Metatranscriptomics,NA,NA,NA,NA,Polar circle,NA,
+ERR6349563_1.fastq.gz,TARA_oceans,ERR6349563_1,Metatranscriptomics,NA,NA,NA,NA,Polar circle,NA,
+ERR6349564_1.fastq.gz,TARA_oceans,ERR6349564_1,Metatranscriptomics,NA,NA,NA,NA,Polar circle,NA,
+SRS260334.denovo_duplicates_marked.trimmed.1.fastq.gz,Human_microbiome,SRS260334,Metagenomic,152,Female,gastrointestinal tract,NA,NA,NA,
+SRS260337.denovo_duplicates_marked.trimmed.1.fastq.gz,Human_microbiome,SRS260337,Metagenomic,173,Female,gastrointestinal tract,NA,NA,NA,
+SRS260347.denovo_duplicates_marked.trimmed.1.fastq.gz,Human_microbiome,SRS260347,Metagenomic,253,Female,gastrointestinal tract,NA,NA,NA,
+SRS260327.denovo_duplicates_marked.trimmed.1.fastq.gz,Human_microbiome,SRS260327,Metagenomic,109,Male,gastrointestinal tract,NA,NA,NA,
+SRS260329.denovo_duplicates_marked.trimmed.1.fastq.gz,Human_microbiome,SRS260329,Metagenomic,130,Male,gastrointestinal tract,NA,NA,NA,
+SRS260348.denovo_duplicates_marked.trimmed.1.fastq.gz,Human_microbiome,SRS260348,Metagenomic,256,Male,gastrointestinal tract,NA,NA,NA,
+SRS011098.denovo_duplicates_marked.trimmed.1.fastq.gz,Human_microbiome,SRS011098,Metagenomic,158458797,Female,gingiva,NA,NA,NA,
+SRS013533.denovo_duplicates_marked.trimmed.1.fastq.gz,Human_microbiome,SRS013533,Metagenomic,159227541,Female,gingiva,NA,NA,NA,
+SRS013252.denovo_duplicates_marked.trimmed.1.fastq.gz,Human_microbiome,SRS013252,Metagenomic,159591683,Male,gingiva,NA,NA,NA,
+SRS014107.denovo_duplicates_marked.trimmed.1.fastq.gz,Human_microbiome,SRS014107,Metagenomic,763435843,Male,gingiva,NA,NA,NA,
+SRS017227.denovo_duplicates_marked.trimmed.1.fastq.gz,Human_microbiome,SRS017227,Metagenomic,159814214,Male,gingiva,NA,NA,NA,
+HMP2_J04183_M_NS_T0_B0_0120_ZN9YTFN-1014_H7FHFBGXX.raw.fastq.tar       ,Human_microbiome,ZN9YTFN,Metagenomic,ZN9YTFN,Female,nasal cavity,NA,NA,NA,
+HMP2_J05433_M_NS_T0_B0_0120_ZLGD9M0-1013_C934HANXX.raw.fastq.tar       ,Human_microbiome,ZLGD9M0,Metagenomic,ZLGD9M0,Male,nasal cavity,NA,NA,NA,
+SRS015381.denovo_duplicates_marked.trimmed.1.fastq.gz,Human_microbiome,SRS015381,Metagenomic,764042746,Female,right retroauricular crease,NA,NA,NA,
+SRS045606.denovo_duplicates_marked.trimmed.1.fastq.gz,Human_microbiome,SRS045606,Metagenomic,338793263,Female,right retroauricular crease,NA,NA,NA,
+SRS014689.denovo_duplicates_marked.trimmed.1.fastq.gz,Human_microbiome,SRS014689,Metagenomic,763961826,Male,right retroauricular crease,NA,NA,NA,
+SRS017851.denovo_duplicates_marked.trimmed.1.fastq.gz,Human_microbiome,SRS017851,Metagenomic,160603188,Male,right retroauricular crease,NA,NA,NA,
+SRS013948.denovo_duplicates_marked.trimmed.1.fastq.gz,Human_microbiome,SRS013948,Metagenomic,763496533,Male,throat,NA,NA,NA,
+SRS019027.denovo_duplicates_marked.trimmed.1.fastq.gz,Human_microbiome,SRS019027,Metagenomic,763961826,Male,throat,NA,NA,NA,
+SRS014466.denovo_duplicates_marked.trimmed.1.fastq.gz,Human_microbiome,SRS014466,Metagenomic,763577454,Female,vagina,NA,NA,NA,
+SRS015072.denovo_duplicates_marked.trimmed.1.fastq.gz,Human_microbiome,SRS015072,Metagenomic,NA,Female,vagina,NA,NA,NA,
+Cell_Paper_haib17CEM4890_H75CGCCXY_SL263649.raw__raw_reads.read_1.fastq.gz                                 ,Metasub,haib17CEM4890_H75CGCCXY_SL263649,Metagenomic,NA,NA,NA,Auckland,New Zeland,Yes,
+Cell_Paper_haib17CEM4890_H75CGCCXY_SL263661.raw__raw_reads.read_1.fastq.gz                                 ,Metasub,haib17CEM4890_H75CGCCXY_SL263661,Metagenomic,NA,NA,NA,Auckland,New Zeland,Yes,
+Cell_Paper_haib17CEM4890_H7KYMCCXY_SL273056.raw__raw_reads.read_1.fastq.gz                                 ,Metasub,haib17CEM4890_H7KYMCCXY_SL273056,Metagenomic,NA,NA,NA,Berlin,Germany,No,
+Cell_Paper_haib17CEM4890_H7KYMCCXY_SL273116.raw__raw_reads.read_1.fastq.gz                                 ,Metasub,haib17CEM4890_H7KYMCCXY_SL273116,Metagenomic,NA,NA,NA,Berlin,Germany,No,
+Cell_Paper_haib17CEM4890_H7KYMCCXY_SL273124.raw__raw_reads.read_1.fastq.gz                                 ,Metasub,haib17CEM4890_H7KYMCCXY_SL273124,Metagenomic,NA,NA,NA,Berlin,Germany,No,
+Cell_Paper_haib17CEM4890_HMCMJCCXY_SL335838.raw__raw_reads.read_1.fastq.gz                                 ,Metasub,haib17CEM4890_HMCMJCCXY_SL335838,Metagenomic,NA,NA,NA,Denver,USA,No,
+Cell_Paper_haib17CEM4890_HMCMJCCXY_SL335812.raw__raw_reads.read_1.fastq.gz                                 ,Metasub,haib17CEM4890_HMCMJCCXY_SL335812,Metagenomic,NA,NA,NA,Denver,USA,No,
+Cell_Paper_haib17CEM5080_H7VL7CCXY_SL267248.raw__raw_reads.read_1.fastq.gz                                 ,Metasub,haib17CEM5080_H7VL7CCXY_SL267248,Metagenomic,NA,NA,NA,Sydney,Australia,Yes,
+Cell_Paper_haib17CEM5106_HCCGHCCXY_SL270361.raw__raw_reads.read_1.fastq.gz                                 ,Metasub,haib17CEM5106_HCCGHCCXY_SL270361,Metagenomic,NA,NA,NA,London,United Kingdom,No,
+Cell_Paper_haib17CEM5106_HCY5HCCXY_SL270913.raw__raw_reads.read_1.fastq.gz                                 ,Metasub,haib17CEM5106_HCY5HCCXY_SL270913,Metagenomic,NA,NA,NA,London,United Kingdom,No,
+Cell_Paper_haib17DB4959_HMGW3CCXY_SL342561.raw__raw_reads.read_1.fastq.gz                                  ,Metasub,haib17DB4959_HMGW3CCXY_SL342561,Metagenomic,NA,NA,NA,Denver,USA,No,
+Cell_Paper_haib17KIU4866_HMCMJCCXY_SL335871.raw__raw_reads.read_1.fastq.gz                                 ,Metasub,haib17KIU4866_HMCMJCCXY_SL335871,Metagenomic,NA,NA,NA,Doha,Qatar,Yes,
+Cell_Paper_haib17KIU4866_HMCMJCCXY_SL335887.raw__raw_reads.read_1.fastq.gz                                 ,Metasub,haib17KIU4866_HMCMJCCXY_SL335887,Metagenomic,NA,NA,NA,Doha,Qatar,Yes,
+Cell_Paper_haib17KIU4866_HTWH2CCXY_SL364098.raw__raw_reads.read_1.fastq.gz                                 ,Metasub,haib17KIU4866_HTWH2CCXY_SL364098,Metagenomic,NA,NA,NA,Sydney,Australia,Yes,
+Cell_Paper_haib17KIU4866_HTWH2CCXY_SL364122.raw__raw_reads.read_1.fastq.gz                                 ,Metasub,haib17KIU4866_HTWH2CCXY_SL364122,Metagenomic,NA,NA,NA,Sydney,Australia,Yes,
+Cell_Paper_haib18CEM5453_HMC2KCCXY_SL336755.raw__raw_reads.read_1.fastq.gz                                 ,Metasub,haib18CEM5453_HMC2KCCXY_SL336755,Metagenomic,NA,NA,NA,Hong Kong,China,Yes,
+Cell_Paper_haib18CEM5453_HMGW3CCXY_SL342322.raw__raw_reads.read_1.fastq.gz                                 ,Metasub,haib18CEM5453_HMGW3CCXY_SL342322,Metagenomic,NA,NA,NA,Doha,Qatar,Yes,
+Cell_Paper_haib18CEM5453_HNHKFCCXY_SL345534.raw__raw_reads.read_1.fastq.gz                                 ,Metasub,haib18CEM5453_HNHKFCCXY_SL345534,Metagenomic,NA,NA,NA,Hong Kong,China,Yes,
+Cell_Paper_haib18CEM5453_HNHKFCCXY_SL345608.raw__raw_reads.read_1.fastq.gz                                 ,Metasub,haib18CEM5453_HNHKFCCXY_SL345608,Metagenomic,NA,NA,NA,Hong Kong,China,Yes,
+Cell_Paper_haib18CEM5526_HMGMHCCXY_SL343412.raw__raw_reads.read_1.fastq.gz                                 ,Metasub,haib18CEM5526_HMGMHCCXY_SL343412,Metagenomic,NA,NA,NA,Zurich,Switzerland,No,
+Cell_Paper_haib18CEM5526_HMGTJCCXY_SL342630.raw__raw_reads.read_1.fastq.gz                                 ,Metasub,haib18CEM5526_HMGTJCCXY_SL342630,Metagenomic,NA,NA,NA,Zurich,Switzerland,No,
+Cell_Paper_sossowski_BarcelonaNov2018_CSD16-BCN-120-29787-CCTAAGAC-CCTAGAGT.raw__raw_reads.read_1.fastq.gz ,Metasub,sossowski_BarcelonaNov2018_CSD16-BCN-120-29787-CCTAAGAC-CCTAGAGT,Metagenomic,NA,NA,NA,Barcelona,Spain,Yes,
+Cell_Paper_sossowski_BarcelonaNov2018_CSD16-BCN-151-29786-CGATCAGT-TTATGCGA.raw__raw_reads.read_1.fastq.gz ,Metasub,sossowski_BarcelonaNov2018_CSD16-BCN-151-29786-CGATCAGT-TTATGCGA,Metagenomic,NA,NA,NA,Barcelona,Spain,Yes,
+Cell_Paper_sossowski_BarcelonaNov2018_CSD16-BCN-254-29786-TCCTGAGC-CTAAGCCT.raw__raw_reads.read_1.fastq.gz ,Metasub,sossowski_BarcelonaNov2018_CSD16-BCN-254-29786-TCCTGAGC-CTAAGCCT,Metagenomic,NA,NA,NA,Barcelona,Spain,Yes,
+SRR16351678_1.fastq,Sponge,SRR16351678_1,Metagenomic,SRR16351678,NA,NA,NA,NA,NA,Ircinia felix
+SRR16351679_1.fastq,Sponge,SRR16351679_1,Metagenomic,SRR16351679,NA,NA,NA,NA,NA,Ircinia felix
+SRR16351683_1.fastq,Sponge,SRR16351683_1,Metagenomic,SRR16351683,NA,NA,NA,NA,NA,Ircinia campana
+SRR16351682_1.fastq,Sponge,SRR16351682_1,Metagenomic,SRR16351682,NA,NA,NA,NA,NA,Ircinia campana
+SRR16351686_1.fastq,Sponge,SRR16351686_1,Metagenomic,SRR16351686,NA,NA,NA,NA,NA,Ircinia strobilina
+SRR16351687_1.fastq,Sponge,SRR16351687_1,Metagenomic,SRR16351687,NA,NA,NA,NA,NA,Ircinia strobilina
+PSBA_S1_L007_R1_001.fastq.gz,Soil_virome,PSBA,Metagenomic,PSBA,NA,NA,NA,NA,NA,NA
+PSBB_S2_L007_R1_001.fastq.gz,Soil_virome,PSBB,Metagenomic,PSBB,NA,NA,NA,NA,NA,NA
+PSFA_S3_L007_R1_001.fastq.gz,Soil_virome,PSFA,Metagenomic,PSFA,NA,NA,NA,NA,NA,NA
+PSFB_S4_L007_R1_001.fastq.gz,Soil_virome,PSFB,Metagenomic,PSFB,NA,NA,NA,NA,NA,NA
+PSFC_S5_L007_R1_001.fastq.gz,Soil_virome,PSFC,Metagenomic,PSFC,NA,NA,NA,NA,NA,NA
+m038_15534_TNA-19_ACAGTG_R1.fastq,Lung_virome,m038_15534,Metagenomic,m038_15534_TNA-19_ACAGTG_R1,NA,NA,NA,NA,NA,NA
+m038_15534_TNA-20_ACAGTG_R1.fastq,Lung_virome,m038_15534,Metagenomic,m038_15534_TNA-20_ACAGTG_R1,NA,NA,NA,NA,NA,NA
+m039_15535_TNA-19_GCCAAT_R1.fastq,Lung_virome,m039_15535,Metagenomic,m039_15535_TNA-19_GCCAAT_R1,NA,NA,NA,NA,NA,NA
+m039_15535_TNA-20_GCCAAT_R1.fastq,Lung_virome,m039_15535,Metagenomic,m039_15535_TNA-20_GCCAAT_R1,NA,NA,NA,NA,NA,NA
+m040_15536_TNA-19_CAGATC_R1.fastq,Lung_virome,m040_15536,Metagenomic,m040_15536_TNA-19_CAGATC_R1,NA,NA,NA,NA,NA,NA
+m040_15536_TNA-20_CAGATC_R1.fastq,Lung_virome,m040_15536,Metagenomic,m040_15536_TNA-20_CAGATC_R1,NA,NA,NA,NA,NA,NA
