@@ -1,0 +1,92 @@
+Keyword,Definition
+domain,"This category refers to: The domain to which species belongs to. Domains include Bacteria/Archaea, Eukarya and Virus. To see Bacteria and Archea separate, refer to the category ""superkingdom"""
+superkingdom,This category refers to: A higher taxonomic classification level to domain. 
+eukarya_type,This category refers to: Type or category within the Eukarya domain. It can be Fungi or Algae
+type_fungi,This category refers to: Type of Fungi structure: Microfungi or Macrofungi. TMD only describes microfungi.
+lichen,This category refers to: Lichen category indicates whether the organism is a lichen (symbiotic relationship between fungi and algae or cyanobacteria). Current version of TMD excludes lichenized fungi from the database.
+type_algae,This category refers to: Type of Algae structure: Microalgae or Macroalgae. TMD only describes microalgae.
+diatom,This category refers to: Diatom category indicates whether the microalgae is a diatom.
+microbiome,"This category refers to: Source of microorganisms. Microbiome can be ecosystems such as soil, water, hosts, etc."
+microbiome_water,"This category refers to: Microbiome water is composed of water sources where microbes are found. Includes:
+- Fresh: It includes ponds, lakes, streams, rivers and wetlands.
+- Marine: Comprises systems of open-ocean characterized by exposure to wave action, tidal fluctuation, and ocean currents.
+- Mangrove: Composed by mangrove plants able to withstand high levels of salinity as well as regions of anoxia and frequent tidal inundation.
+- Sediment: Naturally occurring material that is broken down by processes of weathering and erosion from land to the water by the action of wind, water, or ice.
+- Brackish: Water having more salinity than freshwater, but not as much as seawater.  It may result from mixing seawater (salt water) with fresh water together, as in estuaries, or it may occur in brackish fossil aquifers."
+microbiome_water_fresh,This category refers to: Presence in freshwater microbiomes.
+microbiome_water_fresh_wetland,This category refers to:  Presence in freshwater wetland microbiomes.
+microbiome_water_marine,This category refers to:  Presence in marine or ocean microbiomes.
+microbiome_water_sediment,This category refers to: Presence in sediment-associated microbiomes.
+microbiome_soil,"This category refers to: Microbiome soil is composed of soil or land where microbes are found:
+- Tundra: Usually found at the tops of very high mountains characterized by frigid temperatures and short growing seasons.
+- Forest: Includes densely packed vegetation which strongly limits light penetration to the forest floor. Can be classified on Temperate, Boreal and Tropical forest.
+- Cropland: Human-derived terrestrial biome which is primarily used for agricultural activity.
+- Grassland: Includes large, rolling terrains of grasses, flowers and herbs. 
+- Beach Sand: Sand close to sea or ocean.
+- Sediment: Naturally occurring material that is broken down by processes of weathering and erosion from land to the water by the action of wind, water, or ice."
+microbiome_soil_type,This category refers to: Specific type of forest within the soil microbiome
+microbiome_extreme,"This category refers to: Extreme microbiomes refers to the source of microorganism that thrive or tolerate extreme conditions.
+- Space: Organisms found out of the Earth’s atmosphere in man-built facilities such as the International Space Station. 
+- Depths: deep sea where little or no light penetrates.
+- Desert: Driest of all the biomes. It loses more liquid water by evapotranspiration than is supplied by precipitation. 
+- Polar: It is the coldest, windiest, and driest biomes on Earth, located on the South and North pole. 
+- Volcanic: Surroundings of a volcano. It can be a volcano on the surface or deep on the sea. 
+- Geothermal/Hot Springs: A hot spring, hydrothermal spring, or geothermal spring is a spring produced by the emergence of geothermally heated groundwater that rises from the Earth's crust."
+euk_algae_metabolism,This category refers to: Metabolic characteristics of microalgae.
+euk_growth,This category refers to: Type of growth of microalgae. They can be found growing as solitary or multiple cells linked together as colonial.
+euk_lifestyle,This category refers to: The lifestyle of diatoms in aquatic habitats such as planktonic or benthic diatoms. 
+euk_lifestyle_benthic,"This category refers to:  Depending on the type of substratum, each benthic diatom can be classified in: Epiphytic (attached to plants), Epilithic (attached to rock surfaces), Epipelic (found in mud, sediments, clays, or silt), Epipsammic (attached to grains in sandy sediments)"
+euk_morphology,"This category refers to: The morphology of microalgae which can be Spherical (circular and round), Elliposoidal (oval or elongated oval), Triangular (pyramid like), Helical, Sigmoidal (oval and Curved), or Rectangular."
+euk_symmetry,This category refers to:  Symmetry characteristics of microalgae such as centric or pennate
+euk_secondary_structure,This category refers to: If secondary structures such as bristiles or spines are present in microoalgae species.
+euk_secondary_structure_type,This category refers to: Which secondary structures are present in microoalgae species.
+euk_pigmentation,This category refers to:  If microalgae taxa are known to produce certain type of pigmentation molecule.
+euk_pigmentation_type,This category refers to:  The specific type of pigmentation produced by microalgae species.
+euk_locomotion,"This category refers to:  Many of microalgae are non-motile. However, some do possess the ability to move, making them motile by using hair like structures such as Flagellum and Pilus. Pilus can also be referred to as Fimbria."
+euk_locomotion_structure,This category refers to:  The specific structures used for locomotion in microalgae.
+biofilm_forming,This category refers to: Capacity of microbial species to produce biofilms.
+extremophile,"This category refers to: Capacity of microbes to thrive in extreme conditions such as low/high temperature, acidity, alkalinity, or chemical concentration."
+extremophile_type,"This category refers to: Specific type or classification of extremophiles. They include thermophiles and hyperthermophiles, which survive in high temperatures, and psychrophiles, which live in cold environments. Acidophiles and alkaliphiles flourish in highly acidic and alkaline conditions, respectively. Halophiles are adapted to high salinity, while piezophiles (or barophiles) endure high pressure, and xerophiles survive in dry conditions. Some can tolerate high levels of radiation (radioresistant extremophiles), heavy metals (metallotolerant), or low nutrient substrates (oligotroph). Polyextremophiles can withstand multiple extreme conditions simultaneously."
+euk_reproduction,This category refers to: Reproductive characteristics of microfungi and microalgae.
+spore_forming,"This category refers to: The capacity to produce spores that are not for reproduction. For example as a method for stress resistance or dormant structures (i.e. no metabolic activity). In fungi, spores can be sexual or asexual."
+euk_symbiosis,This category refers to: Any symbiotic relationships involving microalgae or microfungi.
+euk_symbiosis_host,This category refers to:  The specific hosts involved in the symbiotic relationship with microalgae or microfungi.
+pathogen,"This category refers to:  Capacity to be infectious that can cause disease or illness to a host. A microbe can be a pathogen of one or multiple hosts. TMD only considers pathogenic those microbes that are not within the commensal microbiota (or only pathogenic when the host is immunosupressed).
+"
+pathogen_host,This category refers to: Specific hosts that the pathogen affects.
+euk_antagonism,This category refers to: Capacity of microalgae or microfungi to have an antagonistic activity against other microbes
+euk_antagonism_type,This category refers to:  Specific type of antagonistic activity of microfungi or microalgae. For example a fungi that produces antibacterial molecules.
+euk_content_production,"This category refers to: Production of specific molecules relevant for biotechnology such as toxins, terpenoids or lipids by microalgae"
+euk_content_list,This category refers to: List of specific molecules known to be produced by microalgae.
+euk_uv_resistant,This category refers to: The capacity of the microalgae to resist UV radiation.
+euk_uv_resistant_list,This category refers to:  Types of UV radiation to which microalgae have been proven to resist.
+euk_toxin,This category refers to:  The microalgae is known to produce toxins.
+euk_toxin_type,This category refers to:  The specific type of toxin produced by microalgae.
+metabolism,"This category refers to:  The means by which the microbe obtains the energy and nutrients needed to live and reproduce. 	How the microbe obtains energy for living and growing. How the microbe obtain reducing equivalents used in energy conservation and biosynthetic reactions. How the microbe obtains carbon for synthesizing cell mass. "
+metabolism_energy,This category refers to:  Sources of energy for the organism's metabolism.
+metabolism_electron_source,This category refers to:  Sources of electrons for the organism's metabolism.
+metabolism_carbon_source,This category refers to:  Sources of carbon for the organism's metabolism.
+microbiome_host,"This category refers to:  The hosts that the microbial species is found.
+- Animal: Any vertebrate or invertebrate. Does not include humans.
+- Coral: Marine invertebrate typically living in compact colonies.
+- Sponges: Multicellular organisms that have bodies full of pores and channels allowing water to circulate through them. 
+- Plant: Multicellular, predominantly photosynthetic eukaryotes.
+- Fungi: macro-fungi that includes mushrooms.
+- Human: Human being of any race."
+microbiome_host_human,This category refers to:  Annotates the body sites in the human host serving as a microbiome for the microbe.
+pathogen_host_human,This category refers to:  Annotates the body sites in the human host infected by the pathogen.
+antimicrobial_activity,This category refers to:  Organisms that have antimicrobial activity.
+bac_oxygen_use,"This category refers to:  Oxygen use requirements of bacteria. Can be classified into:
+- Aerobes: Require molecular oxygen as a terminal electron acceptor so cannot grow in its absence. 
+- Obligate aerobes: Have absolute requirement for oxygen in order to grow. 
+- Anaerobes: Are unable to grow in the presence of oxygen, it is toxic for them. 
+- Obligate anaerobes: Grow only under the condition of high reducing intensity and for which oxygen is toxic. 
+- Facultative anaerobes: Capable of growth under both aerobic and anaerobic conditions. They preferentially use oxygen as terminal electron acceptor.
+- Aerotolerant anaerobes: Are anaerobic microbes that can tolerate exposure to oxygen.
+- Microaerophile:  Requires oxygen to survive, but requires environments containing lower levels of oxygen than that are present in the atmosphere."
+bac_gram_stain,"This category refers to: This feature is used for microbiologist for classification only for Bacteria. Gram-positive bacteria possess a thick cell wall containing many layers of peptidoglycan and teichoic acids. In contrast, Gram-negative bacteria have a thinner cell wall consisting of a few layers of peptidoglycan surrounded by a second lipid membrane containing lipopolysaccharides and lipoproteins."
+virus_genome,This category refers to: Virus genomes which have either RNA or DNA as their genetic material.
+virus_strand,This category refers to: Viral genome may be single (ss) or double stranded (ds).
+virus_strand_sense,"This category refers to: The sense of the viral genome. The terms ""sense"" and ""strand"" are used interchangeably."
+virus_capsid,"This category refers to: The capsid, or protein shell of a virus.This capsid might be covered by an outer membrane called Enveloped, when the envelop is not present, the virus are called Naked."
+virus_capsid_symmetry,"This category refers to: The way capsid units are arranged. Its symmetry can be Helical, Icosahedral (also known as Spherical or Cubical) and Complex (being composed of several separate capsid units, head and tail)"
