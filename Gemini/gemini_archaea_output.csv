@@ -1,0 +1,88 @@
+﻿scientific_name,bac_oxygen_use,biofilm_forming,spore_forming,extremophile,extremophile_type,microbiome_extreme
+Acidianus brierleyi,Aerobes,Yes,No,Yes,Acidophile Thermophile,Volcanic hot springs
+Acidianus infernus,Aerobes,Yes,No,Yes,Acidophile Thermophile,Volcanic hot springs
+Acidianus manzaensis,Aerobes,Yes,No,Yes,Acidophile Thermophile,Volcanic hot springs
+Acidilobus aceticus,Aerobes,Yes,No,Yes,Acidophile Thermophile,Volcanic hot springs
+Acidithiobacillus ferrivorus,Aerobes,Yes,No,Yes,Acidophile,Acid mine drainage
+Aeropyrum camini,Aerobes,No,No,Yes,Hyperthermophile,Hydrothermal vents
+Aeropyrum camini,Aerobes,No,No,Yes,Hyperthermophile,Deep-sea hydrothermal vents
+Aeropyrum pernix,Aerobes,No,No,Yes,Hyperthermophile,Deep-sea hydrothermal vents
+Archaeoglobus fulgidus,Anaerobes,No,No,Yes,Hyperthermophile Methanogen,Deep-sea hydrothermal vents
+Archaeoglobus profundus,Anaerobes,No,No,Yes,Hyperthermophile Methanogen,Deep-sea hydrothermal vents
+Caldisphaera geyserensis,Aerobes,Yes,No,Yes,Hyperthermophile,Geysers
+Caldisphaera lagunensis,Aerobes,Yes,No,Yes,Hyperthermophile,Deep-sea hydrothermal vents
+Caldisphaera lavendarii,Aerobes,Yes,No,Yes,Hyperthermophile,Deep-sea hydrothermal vents
+Candidatus Desulforudis audaxviator,Anaerobes,No,No,Yes,Hyperthermophile Methanogen,Deep-sea hydrothermal vents
+Candidatus Nitrosocaldus islandicus,Aerobes,No,No,Yes,Thermophile,Hot springs
+Candidatus Nitrosocella dokdonensis,Aerobes,No,No,Yes,Acidophile,Ocean
+Candidatus Nitrosopumilus koreensis,Aerobes,No,No,Yes,Acidophile,Soil
+Candidatus Nitrosopumilus maritimus,Aerobes,No,No,Yes,Acidophile,Marine environments
+Candidatus Nitrososphaera gargensis,Aerobes,No,No,Yes,Acidophile,Soil
+Candidatus Parvarchaeum acidiphilum,Aerobes,No,No,Yes,Acidophile,Acidic environments
+Candidatus Prometheoarchaeum syntrophicum,Anaerobes,Yes,No,Yes,Hyperthermophile Methanogen,Deep-sea hydrothermal vents
+Cenarchaeum symbiosum,Aerobes,Yes,No,Yes,Thermophile,Marine environments
+Chlamydia muridarum,Parasite,No,No,No,No,No
+Chlamydia pneumoniae,Parasite,No,No,No,No,No
+Chlamydia trachomatis,Parasite,No,No,No,No,No
+Chlamydophila abortus,Parasite,No,No,No,No,No
+Chlamydophila caviae,Parasite,No,No,No,No,No
+Chlamydophila felis,Parasite,No,No,No,No,No
+Chlamydophila pneumoniae,Parasite,No,No,No,No,No
+Chlamydophila psittaci,Parasite,No,No,No,No,No
+Colwellia psychrerythraea,Aerobes,No,No,Yes,Psychrophile,Sea ice
+Desulfobulbus propionicus,Anaerobes,Yes,No,Yes,Sulfate-reducer,Freshwater environments
+Desulfurococcus amylolyticus,Anaerobes,No,No,Yes,Hyperthermophile,Deep-sea hydrothermal vents
+Desulfurococcus muenzneri,Anaerobes,No,No,Yes,Hyperthermophile,Deep-sea hydrothermal vents
+Desulfurolobus ambivalens,Anaerobes,Yes,No,Yes,Hyperthermophile Acidophile,Deep-sea hydrothermal vents
+Ferroglobus placidus,Aerobes,No,No,Yes,Acidophile,Acidic environments
+Ferroplasma acidarmanus,Aerobes,No,No,Yes,Acidophile,Acidic environments
+Ferroplasma japonicum,Aerobes,No,No,Yes,Acidophile,Acidic environments
+Geoglobus ahangari,Aerobes,Yes,No,Yes,Thermophile,Geothermal environments
+Halalkalibacterium clarkii,Aerobes,No,No,Yes,Halophile Alkaliphiles,Salt lakes
+Halalkalicoccus jeotgali,Aerobes,No,No,Yes,Halophile Alkaliphiles,Fermented foods
+Haloarcula marismortui,Aerobes,Yes,No,Yes,Halophile,Salt lakes
+Halobacterium salinarum,Aerobes,Yes,No,Yes,Halophile,Salt lakes
+Halococcus salifodinae,Aerobes,No,No,Yes,Halophile,Salt lakes
+Haloferax mediterranei,Aerobes,Yes,No,Yes,Halophile,Salt lakes
+Haloferax volcanii,Aerobes,Yes,No,Yes,Halophile,Salt lakes
+Halomicrobium mukohataei,Aerobes,No,No,Yes,Halophile,Salt lakes
+Haloquadratum walsbyi,Aerobes,Yes,No,Yes,Halophile,Salt lakes
+Ignicoccus hospitalis,Aerobes,Yes,No,Yes,Hyperthermophile,Deep-sea hydrothermal vents
+Ignicoccus islandicus,Aerobes,Yes,No,Yes,Hyperthermophile,Deep-sea hydrothermal vents
+Ignisphaera aggregans,Aerobes,Yes,No,Yes,Hyperthermophile,Deep-sea hydrothermal vents
+Korarchaeum cryptofilum,Anaerobes,No,No,Yes,Hyperthermophile Methanogen,Deep-sea hydrothermal vents
+Methanocaldococcus jannaschii,Anaerobes,Yes,No,Yes,Hyperthermophile Methanogen,Deep-sea hydrothermal vents
+Methanosarcina barkeri,Anaerobes,Yes,No,Yes,Methanogen,"Wetlands, landfills"
+Methanospirillum hungatei,Anaerobes,Yes,No,Yes,Methanogen,Freshwater environments
+Nanoarchaeum equitans,Parasite,No,No,Yes,Hyperthermophile,Deep-sea hydrothermal vents
+Nitrosocaldus yellowstonensis,Aerobes,No,No,Yes,Thermophile,Hot springs
+Nitrososphaera viennensis,Aerobes,No,No,Yes,Acidophile,Soil
+Picrophilus torridus,Aerobes,Yes,No,Yes,Acidophile Thermophile,Acidic hot springs
+Pyrococcus furiosus,Anaerobes,Yes,No,Yes,Hyperthermophile,Deep-sea hydrothermal vents
+Pyrolobus fumarii,Anaerobes,Yes,No,Yes,Hyperthermophile,Deep-sea hydrothermal vents
+Sulfolobus acidocaldarius,Aerobes,Yes,No,Yes,Thermophile Acidophile,"Hot springs, acidic environments"
+Sulfolobus solfataricus,Aerobes,Yes,No,Yes,Thermophile Acidophile,"Hot springs, acidic environments"
+Thermococcus acidophilus,Anaerobes,Yes,No,Yes,Hyperthermophile,Deep-sea hydrothermal vents
+Thermococcus aggregans,Anaerobes,Yes,No,Yes,Hyperthermophile,Deep-sea hydrothermal vents
+Thermococcus atlanticus,Anaerobes,Yes,No,Yes,Hyperthermophile,Deep-sea hydrothermal vents
+Thermococcus barophilus,Anaerobes,Yes,No,Yes,Hyperthermophile,Deep-sea hydrothermal vents
+Thermococcus celer,Anaerobes,Yes,No,Yes,Hyperthermophile,Deep-sea hydrothermal vents
+Thermococcus chitonophagus,Anaerobes,Yes,No,Yes,Hyperthermophile,Deep-sea hydrothermal vents
+Thermococcus fumicolans,Anaerobes,Yes,No,Yes,Hyperthermophile,Deep-sea hydrothermal vents
+Thermococcus gammatolerans,Anaerobes,Yes,No,Yes,Hyperthermophile,Deep-sea hydrothermal vents
+Thermococcus gorgonarius,Anaerobes,Yes,No,Yes,Hyperthermophile,Deep-sea hydrothermal vents
+Thermococcus hydrothermalis,Anaerobes,Yes,No,Yes,Hyperthermophile,Deep-sea hydrothermal vents
+Thermococcus kodakarensis,Anaerobes,Yes,No,Yes,Hyperthermophile,Deep-sea hydrothermal vents
+Thermococcus litoralis,Anaerobes,Yes,No,Yes,Hyperthermophile,Deep-sea hydrothermal vents
+Thermococcus marinus,Anaerobes,Yes,No,Yes,Hyperthermophile,Deep-sea hydrothermal vents
+Thermococcus nautilus,Anaerobes,Yes,No,Yes,Hyperthermophile,Deep-sea hydrothermal vents
+Thermococcus onnurineus,Anaerobes,Yes,No,Yes,Hyperthermophile,Deep-sea hydrothermal vents
+Thermococcus piezophilus,Anaerobes,Yes,No,Yes,Hyperthermophile,Deep-sea hydrothermal vents
+Thermococcus prieurii,Anaerobes,Yes,No,Yes,Hyperthermophile,Deep-sea hydrothermal vents
+Thermococcus profundus,Anaerobes,Yes,No,Yes,Hyperthermophile,Deep-sea hydrothermal vents
+Thermococcus sicarius,Anaerobes,Yes,No,Yes,Hyperthermophile,Deep-sea hydrothermal vents
+Thermococcus sierrae,Anaerobes,Yes,No,Yes,Hyperthermophile,Deep-sea hydrothermal vents
+Thermoplasma acidophilum,Aerobes,No,No,Yes,Thermophile Acidophile,"Hot springs, acidic environments"
+Thermoplasma volcanium,Aerobes,No,No,Yes,Thermophile Acidophile,Volcanic hot springs
+Thermoproteus tenax,Aerobes,Yes,No,Yes,Hyperthermophile,Deep-sea hydrothermal vents
+Thermoproteus uzonensis,Aerobes,Yes,No,Yes,Thermophile,Hot springs
