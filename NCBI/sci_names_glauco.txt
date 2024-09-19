@@ -1,0 +1,34 @@
+Species	Family
+Cyanophoraceae	Glaucocystophyceae
+Cyanophora	Glaucocystophyceae
+Cyanophora biloba	Glaucocystophyceae
+Cyanophora cuspidata	Glaucocystophyceae
+Cyanophora kugrensii	Glaucocystophyceae
+Cyanophora paradoxa	Glaucocystophyceae
+Cyanophora sudae	Glaucocystophyceae
+Cyanophora tetracyanea	Glaucocystophyceae
+Cyanoptyche	Glaucocystophyceae
+Cyanoptyche gloeocystis	Glaucocystophyceae
+Glaucocystales	Glaucocystophyceae
+Glaucocystaceae	Glaucocystophyceae
+Glaucocystis	Glaucocystophyceae
+Glaucocystis bhattacharyae	Glaucocystophyceae
+Glaucocystis geitleri	Glaucocystophyceae
+Glaucocystis incrassata	Glaucocystophyceae
+Glaucocystis miyajii	Glaucocystophyceae
+Glaucocystis nostochinearum	Glaucocystophyceae
+Glaucocystis cf. nostochinearum	Glaucocystophyceae
+Glaucocystis oocystiformis	Glaucocystophyceae
+unclassified Glaucocystis	Glaucocystophyceae
+Glaucocystis sp. ARP-2014	Glaucocystophyceae
+Glaucocystis sp. BBH	Glaucocystophyceae
+Glaucocystis sp. BC-2016	Glaucocystophyceae
+Gloeochaetales	Glaucocystophyceae
+Gloeochaetaceae	Glaucocystophyceae
+Gloeochaete	Glaucocystophyceae
+Gloeochaete wittrockiana	Glaucocystophyceae
+unclassified Glaucocystophyceae	Glaucocystophyceae
+Glaucocystophyceae sp.	Glaucocystophyceae
+environmental samples	Glaucocystophyceae
+uncultured Cyanophora	Glaucocystophyceae
+uncultured glaucocystophycean	Glaucocystophyceae
