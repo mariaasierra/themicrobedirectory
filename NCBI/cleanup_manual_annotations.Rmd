@@ -1,0 +1,621 @@
+---
+title: "TMD Clean up annotations"
+author: 'Mohith Reddy Arikatla'
+date: "2023-06-22"
+output: html_document
+---
+
+### Load required datasets
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(dplyr)
+library(plyr)
+library(tidyr)
+library(forcats)
+library(stringr)
+library(taxizedb)
+```
+
+### Load preliminary datasets
+
+```{r}
+# Load preliminary dataset
+tmd_data <- read.csv("TMD_Data_2020_full_R_V02.1-Mar.csv", header = T, na.strings = F)
+
+# Substitute "N/A" to "NA"
+tmd_data <- data.frame(lapply(tmd_data, function(x) {gsub("N/A",NA, x)}))
+
+# Load proper species names for rows with improper scientific names
+JP_species <- read.csv(file="list_species_to_check_JP Updates 02.13.2024.csv",header=TRUE)
+```
+
+### Get TaxIDs for all species
+
+```{r}
+# Convert both search key and target strings to lower case
+search_key <- tolower(JP_species$Weird.name)
+target_column <- tolower(tmd_data[, 1])
+
+# Find the indices where search_key matches target_column
+matches <- match(search_key, target_column, nomatch = 0)
+
+# Replace values in tmd_data with corresponding values from JP_species
+tmd_data[matches,]$scientific_name <- JP_species$NCBI.Tax.name
+
+getTaxID <- function(name_column) {
+  species <- name_column
+  ids <- name2taxid(species, out_type="summary")
+  
+  # Convert empty cells to NA
+  ids$id[ids$id == ""] <- NA
+
+  return(ids)
+}
+
+# Replace tax_id values for rows with missing tax_id in tmd_data
+missing_tax_ids <- is.na(tmd_data$taxonomy_id)
+
+missing_names <- tmd_data$scientific_name[missing_tax_ids]
+
+# Get tax_id for missing names
+missing_taxIDs <- getTaxID(unique(missing_names))
+
+# Create a named vector (dictionary) for the mapping
+tax_id_dict <- setNames(missing_taxIDs$id, missing_taxIDs$name)
+
+# Update the missing tax_ids in tmd_data
+tmd_data$taxonomy_id[is.na(tmd_data$taxonomy_id)] <- tax_id_dict[tmd_data$scientific_name[is.na(tmd_data$taxonomy_id)]]
+
+# Remove species called environmental data
+tmd_data=tmd_data[!grepl("Environmental samples", tmd_data$scientific_name),] 
+
+# Display how many rows contain tax_id data
+missing_tax_ids <- is.na(tmd_data$taxonomy_id)
+table(missing_tax_ids)
+```
+
+### Merge values from appropriate columns into one column
+
+```{r}
+# Merge values from different microbiome columns
+tmd_data_v1= tmd_data %>% unite("microbiome",
+                                c("euk_microbiome", 
+                                  "euk_microbiome.1",
+                                  "bac_microbiome"), remove = T,  na.rm = TRUE, sep = ",")
+
+tmd_data_v2= tmd_data_v1 %>% unite("microbiome_water", 
+                                   c("bac_microbiome_water", 
+                                     "euk_microbiome_water",
+                                     "euk_microbe_water"), remove = T,  na.rm = TRUE, sep = " ")
+
+tmd_data_v3= tmd_data_v2 %>% unite("microbiome_soil", 
+                                   c("euk_microbiome_soil", 
+                                     "euk_microbiome_soil.1",
+                                     "bac_microbiome_soil"), remove = T,  na.rm = TRUE, sep = " ")
+
+tmd_data_v4= tmd_data_v3 %>% unite("microbiome_soil_type", 
+                                   c("euk_microbiome_soil_forest", 
+                                     "euk_microbiome_soil_type",
+                                     "bac_microbiome_soil_forest"), remove = T,  na.rm = TRUE, sep = " ")
+
+tmd_data_v5= tmd_data_v4 %>% unite("microbiome_water_fresh", 
+                                   c("euk_microbiome_water_fresh.1", 
+                                     "bac_microbiome_water_fresh",
+                                     "euk_microbiome_water_fresh"), remove = T,  na.rm = TRUE, sep = " ")
+
+tmd_data_v6= tmd_data_v5 %>% unite("microbiome_water_fresh_wetland", 
+                                   c("euk_microbiome_water_fresh_wetland", 
+                                     "euk_microbiome_water_fresh_wetland.1",
+                                     "bac_microbiome_water_fresh_wetland"), remove = T,  na.rm = TRUE, sep = " ")
+
+tmd_data_v7= tmd_data_v6 %>% unite("microbiome_water_sediment", 
+                                   c("euk_microbiome_water_sediment", 
+                                     "euk_microbiome_water_sediment.1",
+                                     "bac_microbiome_water_sediment"), remove = T,  na.rm = TRUE, sep = " ")
+
+tmd_data_v8= tmd_data_v7 %>% unite("microbiome_water_marine", 
+                                   c("euk_microbiome_water_marine", 
+                                     "euk_microbiome_water_marine.1",
+                                     "bac_microbiome_water_marine"), remove = T,  na.rm = TRUE, sep = " ")
+
+tmd_data_v9= tmd_data_v8 %>% unite("microbiome_host", 
+                                   c("euk_microbiome_host", 
+                                     "bac_microbiome_host"), remove = T,  na.rm = TRUE, sep = " ")
+
+tmd_data_v10= tmd_data_v9 %>% unite("microbiome_extreme", 
+                                    c("bac_microbiome_extreme", 
+                                      "euk_microbiome_extreme",
+                                      "euk_microbiome_extreme.1"), remove = T,  na.rm = TRUE, sep = " ")
+
+tmd_data_v11= tmd_data_v10 %>% unite("microbiome_host_human", 
+                                     c("euk_microbiome_host_human", 
+                                       "bac_microbiome_host_human"), remove = T,  na.rm = TRUE, sep = " ")
+
+# Combine the columns informing spore forming ability
+tmd_data_v12= tmd_data_v11 %>% unite("spore_forming", 
+                                     c("euk_spores", 
+                                       "euk_spores.1",
+                                       "bac_spores"), remove = T,  na.rm = TRUE, sep = " ")
+
+# Combine the columns informing if the organism is an extremophile 
+colnames(tmd_data_v12[grepl("extremophile", colnames(tmd_data_v12))])
+summary(tmd_data_v12$bac_extremophile)
+tmd_data_v13= tmd_data_v12 %>% unite("extremophile", 
+                                     c("euk_extremophile", 
+                                       "bac_extremophile",
+                                       "euk_extremophile.1"), remove = T,  na.rm = TRUE, sep = " ")
+
+# Combine the columns informing extremophile type
+colnames(tmd_data_v13[grepl("extremophile", colnames(tmd_data_v13))])
+tmd_data_v14= tmd_data_v13 %>% unite("extremophile_type", 
+                                     c("euk_extremophile_type", 
+                                       "euk_extremophile_type.1",
+                                       "bac_extremophile.1"), remove = T,  na.rm = TRUE, sep = " ")
+
+# Combine the columns informing if the organism is biofilm forming
+tmd_data_v15= tmd_data_v14 %>% unite("biofilm_forming", 
+                                     c("bac_biofiolm", 
+                                       "euk_biofilm"), remove = T,  na.rm = TRUE, sep = " ")
+
+# Combine the columns informing if the metabolism source
+tmd_data_v16= tmd_data_v15 %>% unite("metabolism_energy", 
+                                     c("euk_type_metabolism_energy", 
+                                       "bac_metabolism_energy"), remove = T,  na.rm = TRUE, sep = " ")
+tmd_data_v17 = tmd_data_v16 %>% unite("metabolism_carbon_source", 
+                                      c("euk_type_metabolism_carbon_source", 
+                                        "bac_metabolism_carbon_source"), remove = T,  na.rm = TRUE, sep = " ")
+tmd_data_v18 = tmd_data_v17 %>% unite("metabolism_electron_source", 
+                                      c("bac_metabolism_electron_source", 
+                                        "euk_type_metabolism_electron_source"), remove = T,  na.rm = TRUE, sep = " ")
+tmd_data_v19 = tmd_data_v18 %>% unite("metabolism", 
+                                      c("euk_type_metabolism", 
+                                        "bac_metabolism"), remove = T,  na.rm = TRUE, sep = " ")
+
+# Combine the columns informing if the organism is a pathogen
+tmd_data_v20 = tmd_data_v19 %>% unite("pathogen", 
+                                      c("virus_pathogen", 
+                                        "bac_pathogen",
+                                        "euk_pathogen",
+                                        "euk_pathogen.1"), remove = T,  na.rm = TRUE, sep = " ")
+
+# Combine the columns informing the host organism type
+tmd_data_v21 = tmd_data_v20 %>% unite("pathogen_host", 
+                                      c("euk_pathogen_host.1", 
+                                        "virus_pathogen_host",
+                                        "euk_pathogen_host",
+                                        "bac_pathogen_host"), remove = T,  na.rm = TRUE, sep = " ")
+
+# Combine the columns informing the host organism location
+tmd_data_v22 = tmd_data_v21 %>% unite("pathogen_host_human", 
+                                      c("euk_pathogen_host_human", 
+                                        "virus_pathogen_host_human",
+                                        "bac_host_human"), remove = T,  na.rm = TRUE, sep = " ")
+
+# Combine the columns informing if the organism has antimicrobial activity
+tmd_data_v23 = tmd_data_v22 %>% unite("antimicrobial_activity", 
+                                      c("bac_antimicrobial", 
+                                        "euk_antimicrobial_resistance"), remove = T,  na.rm = TRUE, sep = " ")
+
+# Correct spelling errors
+tmd_data_v24=data.frame(lapply(tmd_data_v23, function(x) gsub("Unkown", "Unknown", x)))
+
+# Replace empty strings with NA
+tmd_data_v24[tmd_data_v24==""]<-NA
+
+# Solve the case sensitivity issue causing duplicate rows for the same microbe. 
+# Remove quotes from scientific names
+tmd_data_v24$scientific_name <- gsub("['‘]", "", tmd_data_v24$scientific_name)
+
+# Convert all scientific names to lower case 
+tmd_data_v24$scientific_name <- tolower(tmd_data_v24$scientific_name)
+
+# Make a list of unique scientific names
+tmd_data_v24_entries=as.data.frame(fct_count(tmd_data_v24$scientific_name))
+colnames(tmd_data_v24_entries)=c("scientific_name", "entry_counts")
+
+# Count the number of entries per species to the dataframe
+tmd_data_v25=merge(tmd_data_v24_entries, tmd_data_v24, by = "scientific_name")
+
+# Aggregate rows based on scientific name
+tmd_data_v26=aggregate(tmd_data_v25[,2:ncol(tmd_data_v25)], by = tmd_data_v25[1],
+                       FUN=function(i) paste(i, collapse = " "))
+
+# Change inherently conflicting/mutually exclusive results to "Incongruent" 
+tmd_data_v27=tmd_data_v26
+tmd_data_v27[] <- lapply(tmd_data_v27, function(x) gsub("Yes No|No Yes", "Incongruent", x))
+tmd_data_v27[] <- lapply(tmd_data_v27, function(x) gsub("Eukarya Bacteria/Archaea|Bacteria/Archaea Eukarya|Bacteria/Archaea Virus|Virus Bacteria/Archaea|Eukarya Virus|Virus Eukarya",
+                                                        "Incongruent", x))
+tmd_data_v28=tmd_data_v27[!(tmd_data_v27$domain=="Incongruent"),]
+tmd_data_v28[] <- lapply(tmd_data_v28, function(x) gsub("Algae Fungi|Fungi Algae",
+                                                        "Incongruent", x))
+tmd_data_v29=tmd_data_v28[!(tmd_data_v28$eukarya_type=="Incongruent"),]
+
+tmd_data_v29[] <- lapply(tmd_data_v29, function(x) gsub("Macrofungi Microfungi|Microfungi Macrofungi",
+                                                        "Incongruent", x))
+tmd_data_v29[] <- lapply(tmd_data_v29, function(x) gsub("Macroalgae Microalgae|Microalgae Macroalgae",
+                                                        "Incongruent", x))
+tmd_data_v30 <- tmd_data_v29
+
+# Change scientific name capitalization
+tmd_data_v30$scientific_name <- str_to_sentence(tmd_data_v29$scientific_name)
+
+# Keep only unique entries from the columns microbiome and microbiome_water
+tmd_data_v30$microbiome <- sapply(tmd_data_v30$microbiome, function(x) paste(unique(unlist(str_split(x," "))), collapse = " "))
+tmd_data_v30$microbiome_water <- sapply(tmd_data_v30$microbiome_water, function(x) paste(unique(unlist(str_split(x," "))), collapse = " "))
+tmd_data_v31 <- tmd_data_v30
+
+# Move the column taxonomy_id in front of scientific_name
+tmd_data_v31 <- tmd_data_v31 %>% relocate(scientific_name, .before=taxonomy_id)
+
+# Write a csv file with the resulting dataframe
+write.csv(tmd_data_v31, "tmd_data_v31.csv")
+```
+
+### Load curated dataset for vote
+
+```{r}
+TMD_Latest <- read.csv("tmd_data_v31.csv", row.names = 1)
+```
+
+#### Define exclusive columns (i.e., columns for which there can only be one answer) and take a vote to result in a single answer. 
+
+```{r}
+# Exclusive columns - mutually exclusive
+exclusive_cols <- c(6,7,8,9,10,11,22,25,26,27,28,29,31,32,33,34,37,38,40,42,44,46,48,57,59,60,61,62,63,64)
+
+# Define a function to read different entries within each exclusive column conduct a vote to result in single value results
+take_vote_and_change_to_incongruent <- function(data, entry_count) {
+  # Split the string by space
+  values <- unlist(strsplit(data, " "))
+  
+  # Convert values to lowercase
+  #values <- tolower(values)
+  
+  # Remove "NA" from unique values if other values are present
+  if (length(unique(values)) > 1) {
+    values <- values[values != "NA"]
+  }
+  
+  # Take a vote and choose the major value to represent the row. Else set the values to "Incongruent"
+  if (length(values) > 2) {
+    vote <- data.frame(table(values))
+    order <- vote[order(-vote$Freq),]
+    #vote <- reorder(vote$values,vote$Freq)
+    if (order$Freq[1] >= floor((length(values)+1)/ 2)){
+      values <- order$values[1]
+    } else {
+      values <- "Incongruent"
+    }
+  }
+  else if(length(unique(values)) > 1) {
+    values <- "Incongruent"
+  }
+  # Join the cleaned values back into a single object
+  result <- paste(sort(values), collapse = " ")
+  return(result)
+}
+
+# Define a function to split and keep unique values
+split_and_keep_unique <- function(x) {
+  
+  # Split the string by space and keep only unique values
+  unique_values <- unique(unlist(strsplit(x, " ")))
+  unique_values <- sort(unique_values)
+  # Join the unique values back into a single string
+  result <- paste(sort(unique_values), collapse = " ")
+  return(result)
+}
+
+# Define a function to split entries, correct spelling errors and sort the values in alphabetical order
+clean_and_process_values <- function(x) {
+  # Split the string by space
+  values <- unlist(strsplit(x, " "))
+  
+  # Convert values to lowercase
+  # Note: Commenting out this line. Uncomment if needed.
+  # values <- tolower(values)
+  
+  # Remove "na" from unique values if other values are present
+  if (length(unique(values)) > 1) {
+    values <- values[values != "NA"]
+  }
+  
+  # Remove "unknown" from unique values if other values are present
+  if (length(unique(values)) > 1) {
+    values <- values[values != "Unknown"]
+  }
+  
+  # Capitalize the first letter of each word
+  # Note: Commenting out this line. Uncomment if needed.
+  # values <- str_to_title(values)
+  
+  # Replace "NA" with NULL
+  if (length(values) == 1 && values[1] == "NA") {
+    values <- NA
+  }
+  
+  # Join the cleaned values back into a single object
+  result <- paste(sort(values), collapse = " ")
+  return(result)
+}
+
+```
+
+#### Apply the custom functions to every cell in the data frame
+
+```{r}
+
+# Use the vote function on exclusive columns 
+TMD_Latest[,exclusive_cols] <- as.data.frame(apply(TMD_Latest[,exclusive_cols], 2, function(x) sapply(x, take_vote_and_change_to_incongruent)))
+
+#write.csv(TMD_Latest,file="TMD_V02.csv")
+
+# Use the function to split strings with spaces and keep unique values
+TMD_Latest[,2:64] <- as.data.frame(apply(TMD_Latest[,2:64], 2, function(x) sapply(x, split_and_keep_unique)))
+
+#write.csv(TMD_Latest,file="TMD_V03.csv")
+
+# Use the function to correct spelling errors and sort the values in alphabetical order
+TMD_Latest[,2:64] <- as.data.frame(apply(TMD_Latest[,2:64], 2, function(x) sapply(x, clean_and_process_values)))
+
+write.csv(TMD_Latest,file="TMD_V04.csv")
+```
+
+```{r}
+TMD_Latest <- read.csv(file = "TMD_V04.csv",row.names = 1)
+```
+
+### Subset data per domain
+
+#### Establish column groups to subset data for each domain
+
+```{r}
+TMD_col1to6 <- TMD_Latest[,1:6]
+TMD_col7to71 <- TMD_Latest[,7:71]
+superkingdom <- NA
+
+TMD_skAdded <- cbind(TMD_col1to6,superkingdom,TMD_col7to71)
+
+TMD_Latest <- TMD_skAdded
+
+# Extremophile columns
+extremophile <- c(35,36)
+
+# Microbiome host
+microbiome_host_human <- 56
+microbiome_host <- c(55,microbiome_host_human)
+
+# Microbiome soil
+microbiome_soil <- 19
+
+# Microbiome water
+microbiome_water_marine <- 17
+microbiome_water_fresh <- 15
+microbiome_water_sediment <- 18
+microbiome_water <- c(14,microbiome_water_marine, microbiome_water_fresh, microbiome_water_sediment)
+
+# Microbiome extreme
+microbiome_extreme <- 21
+
+# Microbiome columns
+microbiome <- c(13, microbiome_host, microbiome_soil, microbiome_water, microbiome_extreme)
+
+# Pathogen host
+pathogen_host <- c(42,57)
+pathogen <- c(41,pathogen_host)
+
+# Extremophile columns
+extremophile <- c(35,36)
+
+# Bacteria columns
+bac_col <- c(59,60,extremophile,38,microbiome,pathogen,34,58,51)
+
+# Fungi columns
+fungi_col <- c(8,9,extremophile,38,microbiome,pathogen,58,10)
+
+# Eukaryote lifestyle
+euk_lifestyle_benthic <- 25
+euk_lifestyle <- c(24,euk_lifestyle_benthic)
+
+# Eukaryote secondary structure
+euk_secondary_structure_type <- 29
+euk_secondary_structure <- c(28,euk_secondary_structure_type)
+
+# Eukaryote antagonism
+euk_antagonism_type <- 44
+euk_antagonism <- c(43,euk_antagonism_type)
+
+# Eukaryote toxin type
+euk_toxin_type <- 50
+euk_toxin <- c(49,euk_toxin_type)
+
+# Diatoms
+diatom <- c(12,euk_lifestyle,26,27,euk_secondary_structure,euk_antagonism,euk_toxin)
+
+# Eukaryote pigmentation
+euk_pigmentation_type <- 31
+euk_pigmentation <- c(30,euk_pigmentation_type) 
+
+# Eukaryote locomotion
+euk_locomotion_type <- 33
+euk_locomotion <- c(32,euk_locomotion_type)
+
+# Extremophile
+extremophile_type <- 36
+extremophile <- c(35,extremophile_type)
+
+# Eukaryote symbiosis
+euk_symbiosis_host <- 40
+euk_symbiosis <- c(39,euk_symbiosis_host)
+
+# Eukaryote content
+euk_content_list <- 46
+euk_content_production <- c(45,euk_content_list)
+
+# Eukaryote UV resistance
+euk_uv_resistant <- 47
+
+# Algae columns
+algae_col <- c(8,11, diatom, microbiome, 23, euk_pigmentation, euk_locomotion, 34, extremophile, 37, 38, euk_symbiosis, pathogen, euk_content_production, euk_uv_resistant, 51)
+
+# Virus columns
+virus_capsid_symmetry <- 65
+virus_capsid <- c(64, virus_capsid_symmetry)
+
+virus_col <- c(61,62,63,virus_capsid,pathogen)
+
+microbe_cols_list <- list(bac_col,fungi_col,algae_col, virus_col)
+```
+
+#### Add data from Google Gemini
+
+```{r}
+Gemini_Archaea <- read.csv("Gemini/Gemini_archaea_listv02_Mar.csv")
+Gemini_Virus <- read.csv("Gemini/Gemini_virus_listv02_Mar.csv")
+Gemini_Diatom <- read.csv("Gemini/Gemini_diatom_listv02_Mar.csv")
+Gemini_Bacteria <- read.csv("Gemini/Gemini_bacteria_listv02_Mar.csv")
+
+# Set source and domain values manually
+Gemini_Archaea$source <- "Gemini"
+Gemini_Archaea$domain <- "Archaea"
+Gemini_Virus$source <- "Gemini"
+Gemini_Virus$domain <- "Virus"
+Gemini_Diatom$source <- "Gemini"
+Gemini_Diatom$domain <- "Eukarya"
+Gemini_Diatom$eukarya_type <- "Algae"
+Gemini_Bacteria$source <- "Gemini"
+Gemini_Bacteria$domain <- "Bacteria"
+
+TMD_Latest$source <- "TMD"
+
+# Combine data from Gemini to the main dataset
+Gemini_GhostCols <- rbind.fill(TMD_Latest,Gemini_Archaea) 
+Gemini_GhostCols <- rbind.fill(Gemini_GhostCols,Gemini_Diatom) 
+Gemini_GhostCols <- rbind.fill(Gemini_GhostCols,Gemini_Bacteria)
+Gemini_GhostCols <- rbind.fill(Gemini_GhostCols,Gemini_Virus) 
+
+# Get tax_id for scientific names missing data in Gemini
+missing_names <- Gemini_GhostCols[which(is.na(Gemini_GhostCols$taxonomy_id)),]$scientific_name
+missing_taxIDs <- clusterProfiler::getTaxID(unique(missing_names))
+
+# Create a named vector (dictionary) for the mapping
+tax_id_dict <- setNames(missing_taxIDs$id, missing_taxIDs$name)
+
+# Update the missing tax_ids in tmd_data
+Gemini_GhostCols$taxonomy_id[is.na(Gemini_GhostCols$taxonomy_id)] <- tax_id_dict[Gemini_GhostCols$scientific_name[is.na(Gemini_GhostCols$taxonomy_id)]]
+
+TMD_Latest <- Gemini_GhostCols
+```
+
+```{r}
+#write.csv(TMD_Latest,file="TMD_V05.csv")
+TMD_Latest <- read.csv(file = "TMD_V05.csv",row.names = 1)
+```
+
+#### Get superkingdom from NCBI Taxa ID
+
+```{r}
+
+taxIDs <- TMD_Latest$taxonomy_id
+taxIDs <- na.omit(taxIDs)
+
+classification <- taxizedb::classification(taxIDs)
+
+all_taxaIDs <- c()
+all_superkingdoms <- c()
+
+# Loop through each element in classification
+for (name in names(classification)) {
+    # Check if the element is a data frame
+    if (is.data.frame(classification[[name]])) {
+        # Find the row where the rank is "superkingdom"
+        row_index <- which(classification[[name]]$rank == "superkingdom")
+        
+        # Check if such a row exists
+        if (length(row_index) > 0) {
+            # Append the taxa ID value from that row to the vector
+            all_taxaIDs <- c(all_taxaIDs, name)
+            # Append the corresponding superkingdom value
+            all_superkingdoms <- c(all_superkingdoms, classification[[name]]$name[row_index])
+        }
+    }
+}
+
+# Create a dataframe with ID and superkingdom columns
+sk_result_df <- data.frame(ID = all_taxaIDs, superkingdom = all_superkingdoms)
+
+for(ID in sk_result_df$ID){
+  # Extract the superkingdom value corresponding to the entry
+  sk_value <- sk_result_df[sk_result_df$ID == ID, "superkingdom"]
+  TMD_Latest$superkingdom[TMD_Latest$taxonomy_id == ID] <- sk_value[1]
+}
+
+table(TMD_Latest$superkingdom)
+```
+
+```{r}
+#write.csv(TMD_Latest,file="TMD_V06.1.csv")
+#TMD_Latest <- read.csv(file = "TMD_V06.1.csv",row.names = 1)
+
+#TMD_Latest[TMD_Latest$source == "Gemini" & TMD_Latest$domain == "Eukarya", "eukarya_type"] <- "Algae"
+#write.csv(TMD_Latest,file="TMD_V06.2.csv")
+TMD_Latest <- read.csv(file = "TMD_V06.2.csv",row.names = 1)
+```
+
+#### Subset dataset into separate files per domain
+
+```{r}
+queryDomainTMD <- function(microbe, microbe_column_list = microbe_cols_list) {
+  
+  microbe_cols <- switch(
+    microbe,
+    "Bacteria" = microbe_column_list[1],
+    "Fungi" = microbe_column_list[2],
+    "Algae" = microbe_column_list[3],
+    "Virus" = microbe_column_list[4]
+  )
+  
+  domain <- switch(
+    microbe,
+    "Bacteria" = c("Bacteria/Archaea", "Bacteria", "Archaea"),
+    "Fungi" = "Eukarya",
+    "Algae" = "Eukarya",
+    "Virus" = "Virus"
+  )
+  
+  # Print sanity check for microbe_cols
+  # print(microbe_cols)
+  
+  general <- c(1, 2, 3, 4, 5, 6, 7, unlist(microbe_cols), 66, 67, 68, 69, 70, 71, 72, 73)
+  
+  # Print sanity check for general
+  # print(general)
+  
+  # Create a data frame with the selected columns
+  if ("Eukarya" %in% domain) {
+    query_data <- TMD_Latest[TMD_Latest$eukarya_type == microbe, general]
+  } else {
+    query_data <- TMD_Latest[TMD_Latest$domain %in% domain, general]
+  }
+  
+  # Remove rows with all NAs while keeping rows with at least one non-NA value
+  query_data <- data.frame(query_data)
+  query_data <- query_data[!apply(is.na(query_data), 1, all), ]
+  
+  # Define the CSV file path
+  query_csv_file <- paste0(microbe, "_data.csv")
+  
+  # Write the selected data to a CSV file
+  write.csv(query_data, file = query_csv_file, row.names = FALSE)
+  
+  # Print a message indicating the file has been saved
+  cat("Selected data for", domain, "has been saved to", query_csv_file, "\n")
+}
+
+queryDomainTMD(microbe="Virus")
+queryDomainTMD(microbe="Algae")
+queryDomainTMD(microbe="Fungi")
+queryDomainTMD(microbe="Bacteria")
+
+```
